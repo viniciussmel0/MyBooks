@@ -1,16 +1,20 @@
 package com.viniciusmelo.mybooks.ui.viewholder
 
+import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.viniciusmelo.mybooks.R
 import com.viniciusmelo.mybooks.databinding.ItemBookBinding
 import com.viniciusmelo.mybooks.entity.BookEntity
+import com.viniciusmelo.mybooks.ui.listener.BookListener
 
-class BookViewHolder(private val item : ItemBookBinding) : RecyclerView.ViewHolder(item.root) {
+class BookViewHolder(private val item : ItemBookBinding, private val listener: BookListener) : RecyclerView.ViewHolder(item.root){
 
     fun bind(book: BookEntity) {
         item.textviewTitle.text = book.title
         item.textviewGenre.text = book.genre
         item.textviewAuthor.text = book.author
+
+        item.textviewTitle.setOnClickListener { listener.onClick(book.id) }
 
         setGenreBackground(book.genre)
         updateFavoriteIcon(book.favorite)
@@ -38,5 +42,7 @@ class BookViewHolder(private val item : ItemBookBinding) : RecyclerView.ViewHold
             }
         }
     }
+
+
 
 }
