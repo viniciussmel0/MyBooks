@@ -1,4 +1,4 @@
-package com.viniciusmelo.mybooks.viewmodel
+package com.viniciusmelo.mybooks.viewmodels
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
