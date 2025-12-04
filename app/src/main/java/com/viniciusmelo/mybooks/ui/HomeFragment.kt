@@ -38,11 +38,15 @@ class HomeFragment : Fragment() {
         binding.recyclerviewBooks.adapter = adapter
 
         attachListener()
-
-        viewModel.getAllBooks()
+        
         setObservers()
 
         return binding.root
+    }
+
+    override fun onResume() {
+        super.onResume()
+        viewModel.getAllBooks()
     }
 
     override fun onDestroyView() {
