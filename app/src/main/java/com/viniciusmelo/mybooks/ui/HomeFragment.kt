@@ -33,12 +33,9 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
 
         binding.recyclerviewBooks.layoutManager = LinearLayoutManager(context)
-
-        // adapter
         binding.recyclerviewBooks.adapter = adapter
 
         attachListener()
-        
         setObservers()
 
         return binding.root
@@ -62,6 +59,11 @@ class HomeFragment : Fragment() {
                 bundle.putInt(BookConstants.KEY.BOOK_ID, id)
 
                 findNavController().navigate(R.id.navigation_details, bundle)
+            }
+
+            override fun onFavoriteClick(id: Int) {
+                viewModel.favorite(id)
+                viewModel.getAllBooks()
             }
         })
     }

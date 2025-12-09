@@ -15,6 +15,7 @@ class BookViewHolder(private val item : ItemBookBinding, private val listener: B
         item.textviewAuthor.text = book.author
 
         item.textviewTitle.setOnClickListener { listener.onClick(book.id) }
+        item.imageviewFavorite.setOnClickListener { listener.onFavoriteClick(book.id) }
 
         setGenreBackground(book.genre)
         updateFavoriteIcon(book.favorite)
