@@ -13,7 +13,7 @@ import com.viniciusmelo.mybooks.databinding.FragmentFavoriteBinding
 import com.viniciusmelo.mybooks.helper.BookConstants
 import com.viniciusmelo.mybooks.ui.adapter.BookAdapter
 import com.viniciusmelo.mybooks.ui.listener.BookListener
-import com.viniciusmelo.mybooks.viewmodels.FavoriteViewModel
+import com.viniciusmelo.mybooks.viewmodel.FavoriteViewModel
 
 class FavoriteFragment : Fragment() {
 
