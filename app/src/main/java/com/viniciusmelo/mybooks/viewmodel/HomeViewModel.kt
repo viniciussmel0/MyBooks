@@ -10,10 +10,16 @@ import com.viniciusmelo.mybooks.repository.BookRepository
 
 class HomeViewModel(application: Application) : AndroidViewModel(application) {
 
+    private val repository = BookRepository.getInstance(application.applicationContext)
+
     private val _books = MutableLiveData<List<BookEntity>>()
     val books: LiveData<List<BookEntity>> = _books
 
-    private val repository = BookRepository.getInstance(application.applicationContext)
+    init {
+        if (repository.getAllBooks().isEmpty()) {
+            repository.loadInitialData()
+        }
+    }
 
     fun getAllBooks() {
         _books.value = repository.getAllBooks()

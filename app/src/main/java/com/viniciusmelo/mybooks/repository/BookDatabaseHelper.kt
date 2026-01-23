@@ -8,7 +8,7 @@ import com.viniciusmelo.mybooks.entity.BookEntity
 import com.viniciusmelo.mybooks.helper.DatabaseConstants
 import kotlin.math.PI
 
-class BookDatabaseHelper(context: Context) :
+/* class BookDatabaseHelper(context: Context) :
     SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
 
     override fun onCreate(db: SQLiteDatabase) {
@@ -82,3 +82,4 @@ class BookDatabaseHelper(context: Context) :
         )
     }
 }
+ */
